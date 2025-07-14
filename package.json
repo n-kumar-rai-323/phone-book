@@ -1,0 +1,24 @@
+{
+  "name": "phone-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n-kumar-rai-323/phone-book.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n-kumar-rai-323/phone-book/issues"
+  },
+  "homepage": "https://github.com/n-kumar-rai-323/phone-book#readme",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0"
+  }
+}
