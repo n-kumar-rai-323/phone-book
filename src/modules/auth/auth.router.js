@@ -1,4 +1,5 @@
 const authRoute = require("express").Router()
+const validateData = require("../../../middlewares/validator.middleware");
 const authCtrl = require("./auth.controller")
 const Joi = require("joi")
 
@@ -23,5 +24,5 @@ const RegisterDTO = Joi.object({
     }).default({}),
 });
 
-authRoute.post("/register", authCtrl.registerUser)
+authRoute.post("/register", validateData(RegisterDTO),authCtrl.registerUser)
 module.exports = authRoute
