@@ -1,6 +1,7 @@
 const express = require("express");
+require("./mongo.connection")
 const routerConfig = require("./router.config");
-const errorHandling = require("../../middlewares/error-handling-middleware");
+const errorHandling = require("../middlewares/error-handling-middleware");
 const app =express()
 
 // Body parsers
@@ -14,5 +15,5 @@ app.use((req, res, next) => {
 });
 
 // Error handler
-app.use(errorHandling);
+app.use(errorHandling)
 module.exports = app
