@@ -1,8 +1,10 @@
 class AuthContoller {
     registerUser = (req, res, next) => {
         let result = req.body;
+        let image = req.file
+    
         res.json({
-            data: result,
+            data: {result, image},
             message: "Register Successfylly",
             status: "REGISTER SUCCESS",
             options: null

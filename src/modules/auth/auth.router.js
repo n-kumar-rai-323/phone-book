@@ -1,4 +1,5 @@
 const authRoute = require("express").Router()
+const uploader = require("../../middlewares/filehandling.middleware");
 const validateData = require("../../middlewares/validator.middleware");
 const authCtrl = require("./auth.controller")
 const Joi = require("joi")
@@ -22,7 +23,8 @@ const RegisterDTO = Joi.object({
         linkedin: Joi.string().uri().allow(null, ""),
         instagram: Joi.string().uri().allow(null, ""),
     }).default({}),
+    image:Joi.string().allow(null,"").optional().default(null)
 });
 
-authRoute.post("/register", validateData(RegisterDTO), authCtrl.registerUser)
+authRoute.post("/register",uploader().single('image'),validateData(RegisterDTO), authCtrl.registerUser)
 module.exports = authRoute

@@ -1,4 +1,12 @@
-const MongodbConfig={
-    url: process.env.MONGODB_URL,
-    name:process.env.MONGODB_NAME,
+'personal', 'work', 'family', 'friend', 'other'
+
+const ContactType={
+    PERSONAL: "personal",
+    WORK:"work",
+    FAMILY:"family",
+    FRIEND: "friend",
+    OTHER:"other"
 }
+
+
+module.exports={ContactType}
